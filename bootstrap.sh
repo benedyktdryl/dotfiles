@@ -15,9 +15,14 @@ function doIt() {
 				--exclude "LICENSE-MIT.txt" \
 				-avh --no-perms . ~;
 
-	./brew.sh
+	cd ~
 
-	source ~/.bash_profile;
+	./brew.sh
+	./.macos
+
+	mkdir ~/Projects
+
+	source ~/.zshrc;
 
 	source $(brew --prefix nvm)/nvm.sh
 
