@@ -17,7 +17,7 @@ function doIt() {
 
 	cd ~
 
-	# ./brew.sh
+	./brew.sh
 
 	mkdir ~/Projects
 
