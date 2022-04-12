@@ -5,11 +5,11 @@ cd "$(dirname "${BASH_SOURCE}")";
 git pull origin master;
 
 function doIt() {
-	source ./brew.sh
-	
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	
+	source ./brew.sh
+
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 	rsync --exclude ".git/" 					\
 				--exclude ".DS_Store" 			\
