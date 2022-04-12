@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Remove Homebrew cache
+brew cleanup --prune=all
+
 # Install command-line tools using Homebrew.
 
 # Make sure we’re using the latest Homebrew.
