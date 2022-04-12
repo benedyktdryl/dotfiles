@@ -9,6 +9,7 @@ You can clone the repository wherever you want. (I like to keep it in `~/Project
 ```bash
 git clone https://github.com/benedyktdryl/dotfiles.git
 cd dotfiles
+./brew.sh
 ./bootstrap.sh
 chsh -s /usr/local/bin/zsh
 source ~/.zshrc
