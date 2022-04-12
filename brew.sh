@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
 # Remove Homebrew cache
 brew cleanup --prune=all
 
