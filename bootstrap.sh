@@ -2,7 +2,7 @@
 
 cd "$(dirname "${BASH_SOURCE}")";
 
-git pull origin main;
+git pull origin master;
 
 function doIt() {
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -17,14 +17,9 @@ function doIt() {
 
 	cd ~
 
-	./brew.sh
-	./.macos
+	# ./brew.sh
 
 	mkdir ~/Projects
-
-	chsh -s /usr/local/bin/zsh
-
-	source ~/.zshrc;
 
 	source $(brew --prefix nvm)/nvm.sh
 
@@ -33,6 +28,8 @@ function doIt() {
 
 	npm install npm -g
 	npm update -g
+
+	./.macos
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then

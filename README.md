@@ -7,7 +7,10 @@
 You can clone the repository wherever you want. (I like to keep it in `~/Projects/dotfiles`, with `~/dotfiles` as a symlink.) The bootstrapper script will pull in the latest version and copy the files to your home folder.
 
 ```bash
-git clone https://github.com/benedykt/dotfiles.git && cd dotfiles && source bootstrap.sh
+git clone https://github.com/benedykt/dotfiles.git
+cd dotfiles
+source bootstrap.sh && chsh -s /usr/local/bin/zsh
+source ~/.zshrc
 ```
 
 To update, `cd` into your local `dotfiles` repository and then:

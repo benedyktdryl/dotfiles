@@ -60,7 +60,7 @@ brew install nmap
 # Install other useful binaries.
 brew install git
 brew install gs
-brew install imagemagick --with-webp
+brew install imagemagick
 brew install p7zip
 brew install rename
 brew install tree
