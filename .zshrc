@@ -68,7 +68,7 @@ alias -- -="cd -"
 alias ls="ls -Glasp"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias dc="cd ~/projects"
+alias dc="cd ~/Projects"
 alias g="git"
 
 alias dockerstart="open --background -a Docker"
