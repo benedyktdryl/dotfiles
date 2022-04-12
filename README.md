@@ -12,7 +12,7 @@ cd dotfiles
 source ./bootstrap.sh
 chsh -s /usr/local/bin/zsh
 source ~/.zshrc
-reboot
+sudo reboot
 ```
 
 To update, `cd` into your local `dotfiles` repository and then:
