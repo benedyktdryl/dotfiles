@@ -22,6 +22,8 @@ function doIt() {
 
 	mkdir ~/Projects
 
+	chsh -s /usr/local/bin/zsh
+
 	source ~/.zshrc;
 
 	source $(brew --prefix nvm)/nvm.sh
