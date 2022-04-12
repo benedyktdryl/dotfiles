@@ -79,6 +79,8 @@ brew install dash
 brew install dockutil
 
 # Install desktop apps with cask
+brew install --cask warp
+brew install --cask cron
 brew install --cask google-chrome
 brew install --cask calibre
 brew install --cask licecap

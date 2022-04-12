@@ -9,10 +9,11 @@ You can clone the repository wherever you want. (I like to keep it in `~/Project
 ```bash
 git clone https://github.com/benedyktdryl/dotfiles.git
 cd dotfiles
-./brew.sh
-./bootstrap.sh
+source ./brew.sh
+source ./bootstrap.sh
 chsh -s /usr/local/bin/zsh
 source ~/.zshrc
+reboot
 ```
 
 To update, `cd` into your local `dotfiles` repository and then:

@@ -5,6 +5,10 @@ cd "$(dirname "${BASH_SOURCE}")";
 git pull origin master;
 
 function doIt() {
+	source ./brew.sh
+	
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 	rsync --exclude ".git/" 					\
@@ -17,9 +21,7 @@ function doIt() {
 
 	cd ~
 
-	./brew.sh
-
-	mkdir ~/Projects
+	mkdir -p ~/Projects
 
 	source $(brew --prefix nvm)/nvm.sh
 
@@ -29,7 +31,7 @@ function doIt() {
 	npm install npm -g
 	npm update -g
 
-	./.macos
+	source .macos
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
