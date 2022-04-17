@@ -5,21 +5,6 @@ plugins=(brew cp git git-extras gitfast npm docker docker-compose bgnotify)
 
 source $ZSH/oh-my-zsh.sh
 
-PATH=/bin:/usr/local/bin:/usr/bin:/usr/sbin:/usr/local/sbin:/usr/local/git/bin:/sbin:/opt/X11/bin:/usr/X11/bin:$PATH
-
-### Exports
-export NVM_DIR="$HOME/.nvm"
-
-# Make code the default editor.
-export EDITOR='code';
-
-# Prefer US English and use UTF-8.
-export LANG='en_US.UTF-8';
-export LC_ALL='en_US.UTF-8';
-
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults;
@@ -208,3 +193,20 @@ git config --global user.name "$GIT_AUTHOR_NAME"
 GIT_AUTHOR_EMAIL="cypherq@gmail.com"
 GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 git config --global user.email "$GIT_AUTHOR_EMAIL"
+
+### Exports
+export NVM_DIR="$HOME/.nvm"
+
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+PATH=/bin:/usr/local/bin:/usr/bin:/usr/sbin:/usr/local/sbin:/usr/local/git/bin:/sbin:/opt/X11/bin:/usr/X11/bin:$PATH
+
+export PATH
+
+# Make code the default editor.
+export EDITOR='code';
+
+# Prefer US English and use UTF-8.
+export LANG='en_US.UTF-8';
+export LC_ALL='en_US.UTF-8';
