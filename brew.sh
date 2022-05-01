@@ -77,6 +77,7 @@ brew install youtube-dl
 brew install ffmpeg
 brew install dash
 brew install dockutil
+brew install git-delta
 
 # Install desktop apps with cask
 brew install --cask warp
