@@ -93,6 +93,7 @@ brew install --cask dbeaver-community
 brew install --cask xmind
 brew install --cask keka
 brew install --cask flux
+brew install --cask signal
 
 # Remove outdated versions from the cellar.
 brew cleanup
