@@ -186,6 +186,8 @@ alias reload="exec ${SHELL} -l"
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
+alias battery='system_profiler SPPowerDataType | grep -A3 -B7 "Condition"'
+
 # Git credentials
 GIT_AUTHOR_NAME="Benedykt Dryl"
 GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
