@@ -94,6 +94,7 @@ brew install --cask xmind
 brew install --cask keka
 brew install --cask flux
 brew install --cask raycast
+brew install --cask signal
 
 # Remove outdated versions from the cellar.
 brew cleanup
