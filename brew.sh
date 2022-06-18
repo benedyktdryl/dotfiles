@@ -78,6 +78,8 @@ brew install ffmpeg
 brew install dash
 brew install dockutil
 brew install git-delta
+brew install starship
+brew install fx
 
 # Install desktop apps with cask
 brew install --cask warp

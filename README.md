@@ -20,6 +20,7 @@ To update, `cd` into your local `dotfiles` repository and then:
 
 ```bash
 source bootstrap.sh
+source ~/.zshrc
 ```
 
 ### Specify the `$PATH`

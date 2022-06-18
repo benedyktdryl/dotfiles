@@ -3,6 +3,8 @@ ZSH_THEME="robbyrussell"
 
 plugins=(brew cp git git-extras gitfast npm docker docker-compose bgnotify)
 
+eval "$(starship init zsh)"
+
 source $ZSH/oh-my-zsh.sh
 
 # Add tab completion for `defaults read|write NSGlobalDomain`
