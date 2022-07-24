@@ -4,8 +4,16 @@ cd "$(dirname "${BASH_SOURCE}")";
 
 git pull origin master;
 
-function doIt() {	
-	source ./brew.sh
+function doIt() {
+	source ./brew-common.sh
+
+	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+		# Linux
+		source ./snap.sh
+	elif [[ "$OSTYPE" == "darwin"* ]]; then
+    # Mac OSX
+		source ./brew.sh
+	fi
 
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
