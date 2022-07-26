@@ -8,8 +8,6 @@ function doIt() {
 	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 		sudo apt install curl
 	fi
-	
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 	rsync --exclude ".git/" \
 		--exclude ".DS_Store" \
@@ -36,6 +34,9 @@ function doIt() {
 
 	mkdir -p ~/Projects
 
+
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	
 	source $(brew --prefix nvm)/nvm.sh
 
 	nvm install 18.6.0
