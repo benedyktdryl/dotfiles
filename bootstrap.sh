@@ -35,8 +35,6 @@ function doIt() {
 
 	mkdir -p ~/Projects
 
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-	
 	source $(brew --prefix nvm)/nvm.sh
 
 	nvm install 18.6.0
@@ -44,8 +42,13 @@ function doIt() {
 
 	npm install npm -g
 	npm update -g
-
-	source .macos
+	
+	if [[ "$OSTYPE" == "darwin"* ]]; then
+		# Mac OSX
+		source .macos
+	fi
+	
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 }
 
 doIt
