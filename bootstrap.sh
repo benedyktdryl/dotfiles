@@ -22,7 +22,6 @@ function doIt() {
 		--exclude "snap.sh" \
 		-avh --no-perms . ~
 
-	source ~/.profile
 	source ./brew-common.sh
 
 	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
