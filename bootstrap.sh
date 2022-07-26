@@ -5,7 +5,11 @@ cd "$(dirname "${BASH_SOURCE}")"
 git pull origin master
 
 function doIt() {
-	/bin/bash -c "$(wget -q https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+		sudo apt install curl
+	fi
+	
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 	rsync --exclude ".git/" \
 		--exclude ".DS_Store" \
