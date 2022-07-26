@@ -31,7 +31,7 @@ function doIt() {
 
 	source $(brew --prefix nvm)/nvm.sh
 
-	nvm install 16
+	nvm install 18.6.0
 	nvm alias default node
 
 	npm install npm -g
