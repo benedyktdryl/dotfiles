@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/benedyktdryl/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"
+/bin/bash -c "$(wget -q https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # Remove Homebrew cache
 brew cleanup --prune=all
