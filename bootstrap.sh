@@ -1,29 +1,29 @@
 #!/usr/bin/env bash
 
-cd "$(dirname "${BASH_SOURCE}")";
+cd "$(dirname "${BASH_SOURCE}")"
 
-git pull origin master;
+git pull origin master
 
 function doIt() {
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+	rsync --exclude ".git/" \
+		--exclude ".DS_Store" \
+		--exclude ".osx" \
+		--exclude "bootstrap.sh" \
+		--exclude "README.md" \
+		--exclude "LICENSE-MIT.txt" \
+		-avh --no-perms . ~
+
 	source ./brew-common.sh
 
 	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 		# Linux
 		source ./snap.sh
 	elif [[ "$OSTYPE" == "darwin"* ]]; then
-    # Mac OSX
+		# Mac OSX
 		source ./brew.sh
 	fi
-
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-	rsync --exclude ".git/" 					\
-				--exclude ".DS_Store" 			\
-				--exclude ".osx" 						\
-				--exclude "bootstrap.sh" 		\
-				--exclude "README.md" 			\
-				--exclude "LICENSE-MIT.txt" \
-				-avh --no-perms . ~;
 
 	cd ~
 
@@ -40,6 +40,6 @@ function doIt() {
 	source .macos
 }
 
-doIt;
+doIt
 
-unset doIt;
+unset doIt

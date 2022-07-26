@@ -17,6 +17,7 @@ brew install --cask raycast
 brew install --cask signal
 brew install --cask stats
 brew install --cask slack
+brew install --cask dotnet-sdk
 
 # Remove outdated versions from the cellar.
 brew cleanup
