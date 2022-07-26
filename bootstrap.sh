@@ -7,6 +7,7 @@ git pull origin master
 function doIt() {
 	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 		sudo apt install curl
+	    	sudo apt-get install build-essential
 	fi
 
 	rsync --exclude ".git/" \
@@ -33,7 +34,6 @@ function doIt() {
 	cd ~
 
 	mkdir -p ~/Projects
-
 
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	
