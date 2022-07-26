@@ -15,6 +15,7 @@ function doIt() {
 		--exclude "LICENSE-MIT.txt" \
 		-avh --no-perms . ~
 
+	source ~/.profile
 	source ./brew-common.sh
 
 	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
