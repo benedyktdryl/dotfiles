@@ -12,7 +12,6 @@ git clone https://github.com/benedyktdryl/dotfiles.git
 cd dotfiles
 source ./bootstrap.sh
 chsh -s /usr/local/bin/zsh
-source ~/.zshrc
 sudo reboot
 ```
 
