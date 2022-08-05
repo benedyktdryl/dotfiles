@@ -14,6 +14,10 @@ sudo snap install docker
 #sudo snap disable docker
 #sudo snap enable docker
 
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+wget --content-disposition https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 rm google-chrome-stable_current_amd64.deb
+
+wget --content-disposition https://github.com/Eugeny/tabby/releases/download/v1.0.183/tabby-1.0.183-linux-x64.deb
+sudo dpkg -i tabby-1.0.183-linux-x64.deb
+rm tabby-1.0.183-linux-x64.deb

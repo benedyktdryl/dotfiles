@@ -7,7 +7,7 @@ git pull origin master
 function doIt() {
 	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 		sudo apt install curl
-	    	sudo apt-get install build-essential
+		sudo apt-get install build-essential
 	fi
 
 	rsync --exclude ".git/" \
@@ -18,14 +18,14 @@ function doIt() {
 		--exclude "LICENSE-MIT.txt" \
 		--exclude "brew.sh" \
 		--exclude "brew-common.sh" \
-		--exclude "snap.sh" \
+		--exclude "linux-packages.sh" \
 		-avh --no-perms . ~
 
 	source ./brew-common.sh
 
 	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 		# Linux
-		source ./snap.sh
+		source ./linux-packages.sh
 	elif [[ "$OSTYPE" == "darwin"* ]]; then
 		# Mac OSX
 		source ./brew.sh
@@ -42,12 +42,12 @@ function doIt() {
 
 	npm install npm -g
 	npm update -g
-	
+
 	if [[ "$OSTYPE" == "darwin"* ]]; then
 		# Mac OSX
 		source .macos
 	fi
-	
+
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 }
 
