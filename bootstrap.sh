@@ -6,6 +6,9 @@ git pull origin master
 
 function doIt() {
 	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+		sudo apt --fix-broken install
+		sudo apt update
+		sudo apt upgrade
 		sudo apt install curl
 		sudo apt-get install build-essential
 	fi
