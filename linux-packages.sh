@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+sudo snap install okular
 sudo snap install spotify
 sudo snap install signal-desktop
 sudo snap install vlc
