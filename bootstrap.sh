@@ -27,8 +27,10 @@ function doIt() {
 	source ./brew-common.sh
 
 	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-		# Linux
-		source ./linux-packages.sh
+		if ! [ $(uname -r | sed -n 's/.*\( *Microsoft *\).*/\1/ip') ]; then
+			# Linux but not WSL Linux
+			source ./linux-packages.sh
+		fi
 	elif [[ "$OSTYPE" == "darwin"* ]]; then
 		# Mac OSX
 		source ./brew.sh
