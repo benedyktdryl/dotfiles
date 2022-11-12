@@ -54,6 +54,9 @@ function doIt() {
 	fi
 
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+	command -v zsh | sudo tee -a /etc/shells
+	chsh -s $(which zsh)
 }
 
 doIt
