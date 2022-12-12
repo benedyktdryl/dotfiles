@@ -6,6 +6,14 @@ plugins=(brew cp git git-extras gitfast npm docker docker-compose bgnotify)
 source $ZSH/oh-my-zsh.sh
 
 ### OSX ONLY ###
+if [ $(uname -r | sed -n 's/.*\( *Microsoft *\).*/\1/ip') ]; then
+	# WSL Linux
+	eval ``keychain --eval --agents ssh id_rsa
+fi
+### OSX ONLY ###
+
+
+### OSX ONLY ###
 if [[ "$OSTYPE" == "darwin"* ]]; then
 	# Add tab completion for `defaults read|write NSGlobalDomain`
 	# You could just use `-g` instead, but I like being explicit
