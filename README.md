@@ -32,6 +32,14 @@ Here’s an example `~/.path` file that adds `/usr/local/bin` to the `$PATH`:
 export PATH="/usr/local/bin:$PATH"
 ```
 
+## Known issues
+
+### VSCode update issues on Windows/WSL
+
+```bash
+icacls "%LOCALAPPDATA%\Programs\Microsoft VS Code" /grant "%USERDOMAIN%\%USERNAME%":F /T
+```
+
 ## Credits
 
 https://github.com/mathiasbynens/dotfiles
