@@ -8,10 +8,9 @@ source $ZSH/oh-my-zsh.sh
 ### OSX ONLY ###
 if [ $(uname -r | sed -n 's/.*\( *Microsoft *\).*/\1/ip') ]; then
 	# WSL Linux
-	eval ``keychain --eval --agents ssh id_rsa
+	eval $()keychain --eval --agents ssh id_rsa
 fi
 ### OSX ONLY ###
-
 
 ### OSX ONLY ###
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -177,7 +176,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"                                       # This loads nvm
 [ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
-PATH="/bin:/usr/local/bin:/usr/bin:/usr/sbin:/usr/local/sbin:/usr/local/git/bin:/sbin:/opt/X11/bin:/usr/X11/bin:$PATH"
+PATH="/bin:/usr/local/bin:/usr/bin:/usr/sbin:/usr/local/sbin:/usr/local/git/bin:/sbin:/opt/X11/bin:/usr/X11/bin:$HOME/.local/bin:$PATH"
 
 export PATH
 
