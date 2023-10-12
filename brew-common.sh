@@ -78,3 +78,5 @@ brew install exa
 
 brew tap oven-sh/bun
 brew install bun
+
+brew install rust
