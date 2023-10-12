@@ -75,3 +75,6 @@ brew install nvm
 brew install youtube-dl
 brew install ffmpeg
 brew install exa
+
+brew tap oven-sh/bun
+brew install bun
