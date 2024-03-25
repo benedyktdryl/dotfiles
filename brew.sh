@@ -16,6 +16,8 @@ brew install --cask stats
 brew install --cask slack
 brew install --cask dotnet-sdk
 brew install --cask qbittorrent
+brew install --cask stremio
+brew install --cask cursor
 
 # Remove outdated versions from the cellar.
 brew cleanup
