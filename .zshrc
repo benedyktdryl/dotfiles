@@ -162,6 +162,8 @@ alias reload="exec ${SHELL} -l"
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
+alias heic2jpg="magick mogrify -monitor -format jpg"
+
 # Git credentials
 GIT_AUTHOR_NAME="Benedykt Dryl"
 GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
@@ -186,3 +188,11 @@ export EDITOR='code'
 # Prefer US English and use UTF-8.
 export LANG='en_US.UTF-8'
 export LC_ALL='en_US.UTF-8'
+
+# pnpm
+export PNPM_HOME="/Users/benedyktdryl/Library/pnpm"
+case ":$PATH:" in
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
