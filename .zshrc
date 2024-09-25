@@ -1,3 +1,5 @@
+# CodeWhisperer pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
@@ -20,8 +22,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
 	# Add `killall` tab completion for common apps
 	complete -o "nospace" -W "Docker Dock Finder Chrome SystemUIServer Terminal" killall
+
 	# Recursively delete `.DS_Store` files
-	alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+	alias dscleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
 	# Empty the Trash on all mounted volumes and the main HDD.
 	# Also, clear Apple’s System Logs to improve shell startup speed.
@@ -36,8 +39,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 
 	# Show/hide hidden files in Finder
-	alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-	alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+	alias showhidden="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+	alias hidehidden="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
 	# Hide/show all desktop icons (useful when presenting)
 	alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
@@ -45,6 +48,25 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	# Lock the screen (when going AFK)
 	alias afk="osascript -e 'tell application \"Finder\" to sleep'"
 	alias battery='system_profiler SPPowerDataType | grep -A3 -B7 "Condition"'
+
+	# bun completions
+	[ -s "/Users/benedyktdryl/.bun/_bun" ] && source "/Users/benedyktdryl/.bun/_bun"
+
+	# CodeWhisperer post block. Keep at the bottom of this file.
+	[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
+
+	# Shortcuts
+	alias ls="ls -Glasp"
+	alias dl="cd ~/Downloads"
+	alias dt="cd ~/Desktop"
+	alias dc="cd ~/Projects"
+	alias g="git"
+
+	alias dockerstart="open --background -a Docker"
+
+	function bundleid() {
+		osascript -e "id of app \"$1\""
+	}
 fi
 ### OSX ONLY ###
 
@@ -84,15 +106,6 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
-
-# Shortcuts
-alias ls="ls -Glasp"
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias dc="cd ~/Projects"
-alias g="git"
-
-alias dockerstart="open --background -a Docker"
 
 # Detect which `ls` flavor is in use
 if ls --color >/dev/null 2>&1; then # GNU `ls`

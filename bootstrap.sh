@@ -56,6 +56,7 @@ function doIt() {
 		duti -s com.microsoft.VSCode ts all
 		duti -s com.microsoft.VSCode jsx all
 		duti -s com.microsoft.VSCode tsx all
+		duti -s com.microsoft.VSCode json all
 	fi
 
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
