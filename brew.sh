@@ -18,6 +18,7 @@ brew install --cask qbittorrent
 brew install --cask stremio
 brew install --cask cursor
 
+brew install duti
 brew install stats
 
 # Remove outdated versions from the cellar.

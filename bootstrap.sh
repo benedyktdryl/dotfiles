@@ -42,7 +42,7 @@ function doIt() {
 
 	source $(brew --prefix nvm)/nvm.sh
 
-	nvm install 18.6.0
+	nvm install 22.9.0
 	nvm alias default node
 
 	npm install npm -g
@@ -51,6 +51,11 @@ function doIt() {
 	if [[ "$OSTYPE" == "darwin"* ]]; then
 		# Mac OSX
 		source .macos
+
+		duti -s com.microsoft.VSCode js all
+		duti -s com.microsoft.VSCode ts all
+		duti -s com.microsoft.VSCode jsx all
+		duti -s com.microsoft.VSCode tsx all
 	fi
 
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
