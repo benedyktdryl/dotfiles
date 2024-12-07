@@ -16,7 +16,7 @@ brew install --cask slack
 brew install --cask dotnet-sdk
 brew install --cask qbittorrent
 brew install --cask stremio
-brew install --cask cursor
+brew install --cask ccmenu
 
 brew install duti
 brew install stats
