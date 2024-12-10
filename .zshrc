@@ -67,6 +67,30 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	function bundleid() {
 		osascript -e "id of app \"$1\""
 	}
+
+	convert_wav_to_mp3() {
+		if [[ $# -ne 2 ]]; then
+			echo "Usage: convert_wav_to_mp3 <input.wav> <output.mp3>"
+			return 1
+		fi
+
+		local input_file=$1
+		local output_file=$2
+
+		if [[ ${input_file##*.} != "wav" ]]; then
+			echo "Error: The input file must be a .wav file."
+			return 1
+		fi
+
+		if [[ ${output_file##*.} != "mp3" ]]; then
+			echo "Error: The output file must have a .mp3 extension."
+			return 1
+		fi
+
+		ffmpeg -i "$input_file" -codec:a libmp3lame -qscale:a 2 "$output_file"
+	}
+
+	alias wav2mp3="convert_wav_to_mp3"
 fi
 ### OSX ONLY ###
 
