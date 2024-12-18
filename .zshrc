@@ -90,6 +90,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 		ffmpeg -i "$input_file" -codec:a libmp3lame -qscale:a 2 "$output_file"
 	}
 
+	# Usage: compresspdf [input file] [output file] [screen*|ebook|printer|prepress]
+	compresspdf() {
+		gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/${3:-"screen"} -dCompatibilityLevel=1.4 -sOutputFile="$2" "$1"
+	}
+
 	alias wav2mp3="convert_wav_to_mp3"
 fi
 ### OSX ONLY ###
@@ -233,3 +238,4 @@ case ":$PATH:" in
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
