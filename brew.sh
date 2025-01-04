@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
 # Install desktop apps with cask
-brew install --cask warp
+brew install --cask ghostty
 brew install --cask google-chrome
 brew install --cask licecap
 brew install --cask visual-studio-code
+brew install --cask cursor
 brew install --cask docker
 brew install --cask spotify
 brew install --cask vlc
@@ -18,6 +19,9 @@ brew install --cask qbittorrent
 brew install --cask stremio
 brew install --cask ccmenu
 
+brew install gh
+brew install repomix
+brew instlal aider
 brew install duti
 brew install stats
 
