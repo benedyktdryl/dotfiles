@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Install desktop apps with cask
-brew install --cask ghostty
+brew install --cask warp
 brew install --cask google-chrome
 brew install --cask licecap
 brew install --cask visual-studio-code
