@@ -16,6 +16,8 @@ fi
 
 ### OSX ONLY ###
 if [[ "$OSTYPE" == "darwin"* ]]; then
+	export CPATH=$(xcrun --show-sdk-path)/usr/include
+
 	# Add tab completion for `defaults read|write NSGlobalDomain`
 	# You could just use `-g` instead, but I like being explicit
 	complete -W "NSGlobalDomain" defaults
@@ -92,7 +94,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
 	# Usage: compresspdf [input file] [output file] [screen*|ebook|printer|prepress]
 	compresspdf() {
-		gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/${3:-"screen"} -dCompatibilityLevel=1.4 -sOutputFile="$2" "$1"
+		gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/${3:-"screen"} \
+			-dQUIET -dDetectDuplicateImages \
+			-dCompressFonts=true -r300 -o "$2" "$1"
 	}
 
 	alias wav2mp3="convert_wav_to_mp3"
@@ -221,6 +225,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
 PATH="/bin:/usr/local/bin:/usr/bin:/usr/sbin:/usr/local/sbin:/usr/local/git/bin:/sbin:/opt/X11/bin:/usr/X11/bin:$HOME/.local/bin:$PATH"
+PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
 
 export PATH
 

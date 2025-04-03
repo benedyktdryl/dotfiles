@@ -24,6 +24,8 @@ brew install repomix
 brew instlal aider
 brew install duti
 brew install stats
+brew install coreutils
+brew install git-quick-stats
 
 # Remove outdated versions from the cellar.
 brew cleanup
